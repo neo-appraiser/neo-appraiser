@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네오감정평가사사무소</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://neo-app.co.kr/#organization",
+      "name": "네오감정평가사사무소",
+      "url": "https://neo-app.co.kr",
+      "logo": "https://neo-app.co.kr/favicon.png",
+      "image": "https://neo-app.co.kr/og-image.webp",
+      "telephone": "+82-2-2635-8485",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "논현동 210-3, SH빌딩 302호",
+        "addressLocality": "강남구",
+        "addressRegion": "서울특별시",
+        "postalCode": "06104",
+        "addressCountry": "KR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "이준석"
+      },
+      "description": "데이터와 전문성을 바탕으로 자산의 가치를 새롭게 정의하는 감정평가사사무소"
+    }
+    </script>
+
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        img-src 'self' https: data:; 
+        script-src 'self' https://unpkg.com 'unsafe-inline'; 
+        style-src 'self' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-inline'; 
+        font-src 'self' https://cdn.jsdelivr.net;
+    ">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="description" content="이준석 대표 감정평가사. 데이터와 전문성을 바탕으로 자산의 가치를 새롭게 정의합니다." />
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="네오감정평가사사무소">
+    <meta property="og:description" content="데이터와 전문성을 바탕으로 자산의 가치를 새롭게 정의합니다.">
+    <meta property="og:url" content="https://neo-app.co.kr">
+    <meta property="og:image" content="https://neo-app.co.kr/og-image.webp">
+    <link rel="canonical" href="https://neo-app.co.kr">
+
+    <link rel="preload" as="image" href="main.webp" fetchpriority="high">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563EB;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --kakao-color: #FEE500;
+        }
+
+        /* 기본 설정 및 스크롤 부드럽게 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { line-height: 1.6; color: var(--text-dark); background-color: #fff; word-break: keep-all; }
+        body.menu-open { overflow: hidden; } /* 모바일 메뉴 열림 시 스크롤 방지 */
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; width: 100%; height: 70px;
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 10%; z-index: 1000; border-bottom: 1px solid #f1f5f9;
+        }
+        .logo { font-size: 1.35rem; font-weight: 900; color: var(--accent-color); letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { font-size: 0.95rem; font-weight: 600; color: var(--text-muted); }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* Hamburger Icon */
+        .menu-trigger { display: none; flex-direction: column; gap: 6px; cursor: pointer; width: 30px; height: 24px; justify-content: space-between; }
+        .menu-trigger span { width: 100%; height: 3px; background-color: var(--primary-color); transition: 0.3s; border-radius: 3px; transform-origin: left; }
+        
+        /* 햄버거 버튼 애니메이션 (X자 만들기) */
+        .menu-trigger.active span:nth-child(1) { transform: rotate(45deg); }
+        .menu-trigger.active span:nth-child(2) { opacity: 0; }
+        .menu-trigger.active span:nth-child(3) { transform: rotate(-45deg); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('main.webp') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff;
+        }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: clamp(1.1rem, 2vw, 1.3rem); opacity: 0.95; margin-bottom: 40px; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; width: 100%; }
+        .btn { padding: 18px 35px; border-radius: 10px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .btn-primary { background: var(--accent-color); color: #fff; }
+        .btn-kakao { background: var(--kakao-color); color: #191919; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        /* Sections */
+        section { padding: 90px 10%; }
+        .section-title { margin-bottom: 50px; text-align: left; border-left: 5px solid var(--accent-color); padding-left: 20px; }
+        .section-title h2 { font-size: 2.1rem; color: var(--primary-color); font-weight: 800; }
+
+        /* Profile */
+        .intro-container { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
+        .profile-img-box { flex: 0 0 280px; } 
+        .profile-img-box img { width: 100%; border-radius: 20px; aspect-ratio: 3/4; object-fit: cover; box-shadow: 20px 20px 60px rgba(0,0,0,0.08); }
+        .profile-text { flex: 1; min-width: 320px; }
+        .profile-text .slogan { font-size: 1.15rem; font-weight: 700; color: var(--accent-color); margin-bottom: 20px; line-height: 1.7; }
+        .profile-text h3 { font-size: 1.7rem; margin-bottom: 10px; color: var(--primary-color); }
+        .career-list { list-style: none; border-top: 2px solid #f1f5f9; margin-top: 25px; padding-top: 25px;}
+        .career-list li { margin-bottom: 10px; font-size: 1rem; color: var(--text-dark); position: relative; padding-left: 20px; }
+        .career-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent-color); font-weight: 900; }
+
+        /* Expertise Grid */
+        #areas { background-color: var(--bg-light); }
+        .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .expertise-card { background: #fff; padding: 45px 35px; border-radius: 16px; border: 1px solid #edf2f7; transition: 0.4s; }
+        .expertise-card:hover { border-color: var(--accent-color); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
+        .expertise-card h3 { font-size: 1.3rem; margin-bottom: 18px; color: var(--primary-color); font-weight: 700; }
+        .expertise-card p { font-size: 0.98rem; color: var(--text-muted); line-height: 1.8; }
+
+        /* Contact & Footer */
+        #contact { text-align: center; padding: 100px 10%; background: #fff; }
+        footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 70px 10% 40px; font-size: 0.9rem; }
+        .policy-link { color: #fff; text-decoration: underline; margin-bottom: 20px; display: block; cursor: pointer; font-weight: 600; }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0 5%; }
+            .menu-trigger { display: flex; }
+            .nav-links {
+                position: fixed; top: 70px; left: 0; width: 100%; height: 0;
+                background: rgba(255, 255, 255, 0.98); flex-direction: column; gap: 0;
+                overflow: hidden; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-bottom: 1px solid #f1f5f9;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            .nav-links.active { height: 240px; padding: 20px 0; }
+            .nav-links li { width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid #f8fafc; }
+            
+            section { padding: 70px 6%; }
+            .btn-group { flex-direction: column; gap: 10px; padding: 0 10px; }
+            .btn { width: 100%; justify-content: center; padding: 16px 20px; }
+
+            .intro-container { flex-direction: column; text-align: center; }
+            .career-list li { text-align: left; }
+            .expertise-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
+        .modal-content { background: #fff; margin: 15vh auto; padding: 35px; width: 90%; max-width: 600px; border-radius: 20px; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .close-btn { position: absolute; top: 20px; right: 25px; font-size: 28px; cursor: pointer; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NEO <span style="font-weight: 300; color: var(--text-muted);">APPRAISAL</span></div>
+        <nav>
+            <div class="menu-trigger" id="mobile-menu-btn" role="button" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#intro">대표소개</a></li>
+                <li><a href="#areas">업무영역</a></li>
+                <li><a href="#contact">의뢰하기</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>정확한 가치 평가, 신뢰의 시작</h1>
+        <p>네오감정평가사사무소가 객관적이고 공정한 평가로 자산의 가치를 증명합니다.</p>
+        <div class="btn-group">
+            <a href="https://data-wn.com/vtown" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📊 AI 가격검토 및 의뢰하기</a>
+            <a href="https://pf.kakao.com/_YCWhX/chat" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">💬 카카오톡 채널 상담</a>
+        </div>
+    </section>
+
+    <section id="intro">
+        <div class="section-title"><h2>대표소개</h2></div>
+        <div class="intro-container">
+            <div class="profile-img-box" data-aos="fade-right">
+                <img src="ceo.webp" alt="이준석 대표 감정평가사" loading="lazy" decoding="async" onerror="this.src='https://via.placeholder.com/300x400?text=CEO+Image'">
+            </div>
+            <div class="profile-text" data-aos="fade-left">
+                <div class="slogan">
+                    "데이터와 전문성을 바탕으로 자산의 가치를 새롭게 정의합니다.<br>
+                    명확하고 신뢰할 수 있는 감정평가 솔루션을 제공합니다."
+                </div>
+                <h3>이준석 <span style="font-size: 1.1rem; color: var(--text-muted); font-weight: 400; margin-left: 5px;">대표 감정평가사</span></h3>
+                <ul class="career-list">
+                    <li>현) 네오감정평가사사무소 대표 감정평가사</li>
+                    <li>현) 주식회사 데이타운 총괄이사</li>
+                    <li>전) (주)중앙감정평가법인 이사</li>
+                    <li>건국대학교 부동산대학원 석사 (글로벌프롭테크 전공)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas">
+        <div class="section-title"><h2>업무영역</h2></div>
+        <div class="expertise-grid">
+            <div class="expertise-card" data-aos="fade-up">
+                <h3>💰 일반(조세)거래 평가</h3>
+                <p>상속, 증여, 현물출자 시 절세를 위한 시가 산정, 국세청 제출용 신뢰할 수 있는 보고서를 제공합니다.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>🏗️ 보상평가</h3>
+                <p>재개발, 공공사업 시행에 따른 수용 등 고객의 정당한 권익 보호를 위한 최적의 보상액을 산정합니다.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>⚖️ 자산재평가</h3>
+                <p>IFRS 도입 및 재무구조 개선을 위해 기업 자산의 공정가치를 정확히 반영하여 기업 가치를 극대화합니다.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up">
+                <h3>🏢 기업평가</h3>
+                <p>비상장주식 가치평가 및 경영권 승계, 자산양수도 시 의사결정의 핵심 근거를 제시합니다.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>💡 무형자산 평가</h3>
+                <p>특허권, 상표권, 디자인권 등 지식재산의 가치를 객관적 지표로 계량화하여 평가합니다.</p>
+            </div>
+            <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>📑 부동산 컨설팅</h3>
+                <p>풍부한 시장 데이터와 전문 지식을 결합하여 프로젝트별 맞춤형 분석과 투자 전략을 제안합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title" style="text-align: center; border:0; padding:0;"><h2>의뢰하기</h2></div>
+        <p style="margin-bottom: 45px; color: var(--text-muted); font-size: 1.1rem;">전문 감정평가사가 신속하고 정확하게 상담해 드립니다.</p>
+        <div class="btn-group">
+            <a href="https://data-wn.com/vtown" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📊 AI 가격검토 및 의뢰하기</a>
+            <a href="https://pf.kakao.com/_YCWhX/chat" target="_blank" rel="noopener noreferrer" class="btn btn-kakao">💬 카카오톡 채널 상담</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-info">
+            <a class="policy-link" onclick="openModal()">개인정보처리방침 및 서비스 이용 안내</a>
+            <p><strong>네오감정평가사사무소</strong> | 대표: 이준석 | 사업자번호: 227-12-07130</p>
+            <p>주소: 서울특별시 강남구 논현동 210-3, SH빌딩 302호</p>
+            <p>Tel: 02-2635-8485 | E-mail: neo8485@naver.com</p>
+        </div>
+        <div style="opacity: 0.6; margin-top: 20px;">
+            &copy; <span id="year"></span> NEO Appraisal Office. All Rights Reserved.
+        </div>
+    </footer>
+
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 style="margin-bottom: 25px; color: var(--accent-color); font-weight: 800;">개인정보처리방침</h3>
+            <div style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.8; max-height: 400px; overflow-y: auto;">
+                <p><strong>1. 수집 항목:</strong> 성함, 연락처, 물건지 주소 등 상담에 필요한 최소 정보</p>
+                <p><strong>2. 이용 목적:</strong> 감정평가 상담 및 업무 수행</p>
+                <p><strong>3. 보유 기간:</strong> 상담 및 업무 종료 후 지체 없이 파기</p>
+                <p><strong>4. 참고:</strong> 제공되는 AI 가격은 참고용이며, 정식 평가는 현장 조사 후 발행됩니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS 애니메이션 초기화
+        AOS.init({ duration: 1000, once: true });
+
+        // Footer 연도 자동 설정
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 모바일 메뉴 제어 로직
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const body = document.body;
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.classList.toggle('active'); // 버튼 모양 변경 및 상태 저장
+            navMenu.classList.toggle('active'); // 메뉴 펼치기
+            
+            // 접근성: 스크린 리더에게 메뉴가 열렸는지 알려줌
+            menuBtn.setAttribute('aria-expanded', isExpanded);
+
+            // 메뉴 열렸을 때 배경 스크롤 막기
+            if (navMenu.classList.contains('active')) {
+                body.classList.add('menu-open');
+            } else {
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // 메뉴 링크 클릭 시 자동으로 닫기
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                menuBtn.setAttribute('aria-expanded', 'false'); // 닫힘 상태로 변경
+            });
+        });
+
+        // 모달 제어
+        function openModal() { document.getElementById("policyModal").style.display = "block"; document.body.style.overflow = "hidden"; }
+        function closeModal() { document.getElementById("policyModal").style.display = "none"; document.body.style.overflow = "auto"; }
+        
+        // 모달 외부 클릭 시 닫기
+        window.onclick = (e) => { if (e.target == document.getElementById("policyModal")) closeModal(); }
+    </script>
+</body>
+</html>
